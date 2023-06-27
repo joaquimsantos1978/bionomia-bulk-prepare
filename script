@@ -1,0 +1,35 @@
+//English version. You might need to translate the functions to match your system language
+
+function main(workbook: ExcelScript.Workbook) {
+	let selectedSheet = workbook.getActiveWorksheet();
+	// Toggle auto filter on selectedSheet
+	selectedSheet.getAutoFilter().apply(selectedSheet.getRange("A1"));
+	// Custom sort on range spanned by auto filter
+	selectedSheet.getAutoFilter().getRange().getSort().apply([{key: 16, ascending: true}], false, true);
+	// Insert at range A:A on selectedSheet, move existing cells right
+	selectedSheet.getRange("A:A").insert(ExcelScript.InsertShiftDirection.right);
+	// Insert at range A:A on selectedSheet, move existing cells right
+	selectedSheet.getRange("A:A").insert(ExcelScript.InsertShiftDirection.right);
+	// Insert at range A:A on selectedSheet, move existing cells right
+	selectedSheet.getRange("A:A").insert(ExcelScript.InsertShiftDirection.right);
+	// Set range A1:D2 on selectedSheet
+	selectedSheet.getRange("A1:D2").setFormulasLocal([["text_to_search","search_collector","search_identifier",null],[null,"=IFERROR(SEARCH($A$2,W2),0)","=IFERROR(SEARCH($A$2,S2),0)","=IF(AND(B2>=1,C2>=1),\"recorded,identified\",IF(B2>=1,\"recorded\",IF(C2>=1,\"identified\",\"\")))"]]);
+	// Auto fill range
+	selectedSheet.getRange("A2:D2").autoFill("A2:D10001", ExcelScript.AutoFillType.fillDefault);	
+	// Set range A2 on selectedSheet
+	selectedSheet.getRange("A2").setValue("agentName");
+	// Set width of column(s) at range D:D on selectedSheet to 100
+	selectedSheet.getRange("D:D").getFormat().setColumnWidth(100);
+	// Set width of column(s) at range F:I on selectedSheet to 0
+	selectedSheet.getRange("F:I").getFormat().setColumnWidth(0);
+	// Set width of column(s) at range K:L on selectedSheet to 0
+	selectedSheet.getRange("K:L").getFormat().setColumnWidth(0);
+	// Set width of column(s) at range O:O on selectedSheet to 100
+	selectedSheet.getRange("O:O").getFormat().setColumnWidth(100);
+	// Set width of column(s) at range W:W on selectedSheet to 140
+	selectedSheet.getRange("W:W").getFormat().setColumnWidth(140);
+	// Set width of column(s) at range S:S on selectedSheet to 140
+	selectedSheet.getRange("S:S").getFormat().setColumnWidth(140);
+	// Set width of column(s) at range J:J on selectedSheet to 100
+	selectedSheet.getRange("J:J").getFormat().setColumnWidth(100);
+}
