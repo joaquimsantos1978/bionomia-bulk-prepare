@@ -24,4 +24,4 @@ You should then check each line, as you normally do, and correct/delete the valu
 Save the csv and submit it to Bionomia as you normally do.
 
 # Screenshots
-<img src="screenshots/Screenshot_1.png" width="800">
+<img src="screenshots/Screenshot_1.png" width="100%">
