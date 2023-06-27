@@ -8,7 +8,7 @@ It adds three auxiliary columns at the beginning to check for matches on identif
 - Column C looks for matches on identifiedBy
 A formula on action column will write the values based on those matches (recorded/ identified / recorded,identified).
 
-This is the english version, you might need to translate the functions to match your system language.
+This is the English version, you might need to translate the functions to match your system language.
 
 # Installation
 1. In Excel on the web, for Windows, or for Mac, open an Excel workbook. Select Automate > New Script
@@ -19,8 +19,8 @@ This is the english version, you might need to translate the functions to match 
 After downloading the csv file for bulk attribution from Bionomia, open it with MS Excel. Select Automate > [script_name] > Run.
 The script will modify the spreadseet.
 Write on A2 the agentName string you want to match (part of the name of the agent). Press enter.
-THe column D (action) will be filled in with the values according to matches (recorded/ identified/ recorded,identified).
-You should then check each line, as you normally do, and correct/delete the values if it is the case.
+The column D (action) will be filled in with the values according to matches (recorded/ identified/ recorded,identified).
+You should then check each line, as you normally do, and correct/delete the values if it is the case. You can use the filters on columns (country, kingdom, etc.).
 Save the csv and submit it to Bionomia as you normally do.
 
 # Screenshots
