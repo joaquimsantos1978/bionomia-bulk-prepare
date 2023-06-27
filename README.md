@@ -22,3 +22,6 @@ Write on A2 the agentName string you want to match (part of the name of the agen
 THe column D (action) will be filled in with the values according to matches (recorded/ identified/ recorded,identified).
 You should then check each line, as you normally do, and correct/delete the values if it is the case.
 Save the csv and submit it to Bionomia as you normally do.
+
+# Screenshots
+<img src=“screenshots/screenshot_1.png” width="800">
