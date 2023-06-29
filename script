@@ -12,9 +12,9 @@ function main(workbook: ExcelScript.Workbook) {
 	selectedSheet.getRange("A:A").insert(ExcelScript.InsertShiftDirection.right);
 	// Insert at range A:A on selectedSheet, move existing cells right
 	selectedSheet.getRange("A:A").insert(ExcelScript.InsertShiftDirection.right);
-	// Set range A1:D2 on selectedSheet
+	// Set range A1:D2 on selectedSheet (prepare the new columns: A - string text to search, B - formula to match collector, B - formula to match identifier)
 	selectedSheet.getRange("A1:D2").setFormulasLocal([["text_to_search","search_collector","search_identifier",null],[null,"=IFERROR(SEARCH($A$2,W2),0)","=IFERROR(SEARCH($A$2,S2),0)","=IF(AND(B2>=1,C2>=1),\"recorded,identified\",IF(B2>=1,\"recorded\",IF(C2>=1,\"identified\",\"\")))"]]);
-	// Auto fill range
+	// Auto fill range (the downloaded file from Bionomia has 10.000 records, so fill down till 10001
 	selectedSheet.getRange("A2:D2").autoFill("A2:D10001", ExcelScript.AutoFillType.fillDefault);	
 	// Set range A2 on selectedSheet
 	selectedSheet.getRange("A2").setValue("agentName");
@@ -28,8 +28,12 @@ function main(workbook: ExcelScript.Workbook) {
 	selectedSheet.getRange("O:O").getFormat().setColumnWidth(100);
 	// Set width of column(s) at range W:W on selectedSheet to 140
 	selectedSheet.getRange("W:W").getFormat().setColumnWidth(140);
+	// Set font bold to true for range W:W on selectedSheet
+	selectedSheet.getRange("W:W").getFormat().getFont().setBold(true);
 	// Set width of column(s) at range S:S on selectedSheet to 140
 	selectedSheet.getRange("S:S").getFormat().setColumnWidth(140);
+	// Set font bold to true for range S:S on selectedSheet
+	selectedSheet.getRange("S:S").getFormat().getFont().setBold(true);
 	// Set width of column(s) at range J:J on selectedSheet to 100
 	selectedSheet.getRange("J:J").getFormat().setColumnWidth(100);
 }
