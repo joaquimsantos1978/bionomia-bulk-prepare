@@ -36,4 +36,6 @@ function main(workbook: ExcelScript.Workbook) {
 	selectedSheet.getRange("S:S").getFormat().getFont().setBold(true);
 	// Set width of column(s) at range J:J on selectedSheet to 100
 	selectedSheet.getRange("J:J").getFormat().setColumnWidth(100);
+	//select cell A2
+	selectedSheet.getRange("A2").select();
 }
