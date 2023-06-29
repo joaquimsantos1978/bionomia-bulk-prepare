@@ -38,4 +38,6 @@ function main(workbook: ExcelScript.Workbook) {
 	selectedSheet.getRange("J:J").getFormat().setColumnWidth(100);
 	//select cell A2
 	selectedSheet.getRange("A2").select();
+	// Freeze rows on selectedSheet (fix the top row)
+	selectedSheet.getFreezePanes().freezeRows(1);	
 }
